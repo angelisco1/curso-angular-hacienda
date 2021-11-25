@@ -1,16 +1,23 @@
 <h2>Data Binding</h2>
 
 <h3>String Interpolation</h3>
-
 <p>Me llamo {{nombre}}</p>
 <p>Me llamo {{getNombre()}}</p>
 <p>Hola {{nombre ? nombre : 'mundo'}}</p>
 
 <h3>Property Binding</h3>
-
 <input type="text" [disabled]="deshabilitado">
-<img [src]="urlImagen" alt="" width="100">
+<img [src]="urlImagen" alt="Logo de {{tituloLogo}}" width="100">
+<img [src]="urlImagen" [alt]="textoAlt" width="100">
 
 <h3>Event Binding</h3>
+<button type="button" (click)="toggleDisabled()">Toggle disabled</button>
+<input type="text" (change)="mostrarValor($event)">
 
 <h3>Two Way Binding</h3>
+<input type="text" [(ngModel)]="nombre">
+<input type="text" [value]="nombre" (input)="cambiarNombre($event)">
+<input type="text" [value]="nombre" (change)="cambiarNombre($event)">
+<!-- <input type="text" [value]="nombre" (keyup)="cambiarNombre($event)">
+<input type="text" [value]="nombre" (keydown)="cambiarNombre($event)">
+<input type="text" [value]="nombre" (keypress)="cambiarNombre($event)"> -->

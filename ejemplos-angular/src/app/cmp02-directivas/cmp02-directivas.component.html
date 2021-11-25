@@ -1,0 +1,62 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+
+<p [ngStyle]="{backgroundColor: colorFondo, color: 'orange'}">Este texto es naranja y tiene el fondo negro</p>
+<p [ngStyle]="getStyles()">Este texto es naranja y tiene el fondo negro</p>
+
+<p [ngClass]="{tachado: false, letraAzul: true}">Este texto está tachado y la letra es azul</p>
+
+<input type="color" [(ngModel)]="colorFondo">
+
+<p appMarcar>Pasa el ratón por encima del párrafo para marcarlo</p>
+
+
+<h3>Estructurales</h3>
+
+<!-- <button *ngIf="darkMode" (click)="toggleDarkMode(false)">Modo oscuro activado 🌛</button>
+<button *ngIf="!darkMode" (click)="toggleDarkMode(true)">Modo claro activado ☀️</button> -->
+
+
+<!-- <button *ngIf="darkMode; else btnLightMode" (click)="toggleDarkMode(false)">Modo oscuro activado 🌛</button>
+<ng-template #btnLightMode>
+  <button (click)="toggleDarkMode(true)">Modo claro activado ☀️</button>
+</ng-template> -->
+
+<div *ngIf="darkMode; then btnDarkMode else btnLightMode"></div>
+
+<ng-template #btnDarkMode>
+  <button (click)="toggleDarkMode(false)">Modo oscuro activado 🌛</button>
+</ng-template>
+
+<ng-template #btnLightMode>
+  <button (click)="toggleDarkMode(true)">Modo claro activado ☀️</button>
+</ng-template>
+
+<div [ngStyle]="{display: 'flex', justifyContent: 'space-evenly'}">
+  <app-sugus
+    *ngFor="let s of sugus"
+    [color]="s.color"
+    [sabor]="s.sabor"
+  ></app-sugus>
+</div>
+
+<!-- <app-sugus [sabor]="sugus[1].sabor" [color]="sugus[1].color"></app-sugus>
+<app-sugus sabor="fresa" color="red"></app-sugus> -->
+
+<!-- <div [ngSwitch]="sugusPreferido">
+  <p *ngSwitchCase="'limón'">Me gusta el sugus de limón</p>
+  <p *ngSwitchCase="'piña'">Me gusta el sugus de piña</p>
+  <p *ngSwitchCase="'naranja'">Me gusta el sugus de naranja</p>
+  <p *ngSwitchCase="'fresa'">Me gusta el sugus de fresa</p>
+  <p *ngSwitchDefault>No me gustan los sugus</p>
+</div> -->
+
+<div [ngSwitch]="sugusPreferido">
+
+  <ng-container *ngFor="let s of sugus">
+    <p *ngSwitchCase="s.sabor">Me gusta el sugus de {{s.sabor}}</p>
+  </ng-container>
+
+  <p *ngSwitchDefault>No me gustan los sugus</p>
+</div>
