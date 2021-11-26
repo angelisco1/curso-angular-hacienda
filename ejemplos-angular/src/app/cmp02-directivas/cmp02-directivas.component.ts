@@ -19,6 +19,8 @@ export class Cmp02DirectivasComponent implements OnInit {
     { sabor: 'fresa', color: 'red' },
   ]
 
+  blue = 'orange'
+
   constructor() { }
 
   ngOnInit(): void {

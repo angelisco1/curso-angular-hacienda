@@ -8,6 +8,9 @@ import { Cmp01DataBindingComponent } from './cmp01-data-binding/cmp01-data-bindi
 import { Cmp02DirectivasComponent } from './cmp02-directivas/cmp02-directivas.component';
 import { SugusComponent } from './cmp02-directivas/sugus/sugus.component';
 import { MarcarDirective } from './cmp02-directivas/marcar.directive';
+import { Cmp03PipesComponent } from './cmp03-pipes/cmp03-pipes.component';
+import { DoblePipe } from './cmp03-pipes/doble.pipe';
+import { FiltroPipe } from './cmp03-pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { MarcarDirective } from './cmp02-directivas/marcar.directive';
     Cmp01DataBindingComponent,
     Cmp02DirectivasComponent,
     SugusComponent,
-    MarcarDirective
+    MarcarDirective,
+    Cmp03PipesComponent,
+    DoblePipe,
+    FiltroPipe
   ],
   imports: [
     // Módulos

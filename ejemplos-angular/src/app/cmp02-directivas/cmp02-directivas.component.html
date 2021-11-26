@@ -9,8 +9,9 @@
 
 <input type="color" [(ngModel)]="colorFondo">
 
-<p appMarcar>Pasa el ratón por encima del párrafo para marcarlo</p>
-
+<p [appMarcar]="{color: 'red'}">Pasa el ratón por encima del párrafo para marcarlo</p>
+<p [appMarcar]="{color: 'blue'}">Pasa el ratón por encima del párrafo para marcarlo</p>
+<p [appMarcar]="{color: blue, time: 1500}">Pasa el ratón por encima del párrafo para marcarlo</p>
 
 <h3>Estructurales</h3>
 
