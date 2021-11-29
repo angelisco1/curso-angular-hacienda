@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,11 @@ import { MarcarDirective } from './cmp02-directivas/marcar.directive';
 import { Cmp03PipesComponent } from './cmp03-pipes/cmp03-pipes.component';
 import { DoblePipe } from './cmp03-pipes/doble.pipe';
 import { FiltroPipe } from './cmp03-pipes/filtro.pipe';
+import { Cmp04FormulariosComponent } from './cmp04-formularios/cmp04-formularios.component';
+import { ReactivoComponent } from './cmp04-formularios/reactivo/reactivo.component';
+import { NormalComponent } from './cmp04-formularios/normal/normal.component';
+import { ErroresFormComponent } from './cmp04-formularios/errores-form/errores-form.component';
+import { Cmp05ServiciosComponent } from './cmp05-servicios/cmp05-servicios.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +28,18 @@ import { FiltroPipe } from './cmp03-pipes/filtro.pipe';
     MarcarDirective,
     Cmp03PipesComponent,
     DoblePipe,
-    FiltroPipe
+    FiltroPipe,
+    Cmp04FormulariosComponent,
+    ReactivoComponent,
+    NormalComponent,
+    ErroresFormComponent,
+    Cmp05ServiciosComponent
   ],
   imports: [
     // Módulos
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

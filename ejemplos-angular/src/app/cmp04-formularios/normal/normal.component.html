@@ -1,0 +1,20 @@
+<h3>Normal</h3>
+
+<form (ngSubmit)="registrar(form)" #form="ngForm">
+  <div>
+    <label for="usuario">Usuario</label>
+    <input type="text" id="usuario" name="usuario" [ngModel]="datosRegistro.usuario" minlength="3" required #usuario="ngModel">
+    <p *ngIf="usuario.invalid && usuario.touched">El campo tiene errores</p>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" [ngModel]="datosRegistro.email">
+  </div>
+  <div>
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" name="password" [ngModel]="datosRegistro.password">
+  </div>
+
+  <button type="submit">Registrate</button>
+  <button type="submit" [disabled]="form.invalid">Registrate</button>
+</form>
