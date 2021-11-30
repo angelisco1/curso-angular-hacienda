@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlAPI: 'https://miapi.com/v1'
+  urlTareas: 'https://ejemplos-dc1c1.firebaseio.com/tareas-hacienda/angel'
 };

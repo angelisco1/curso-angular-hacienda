@@ -1,0 +1,9 @@
+<h2>Peticiones HTTP</h2>
+
+<input type="text" #inputTarea>
+<button (click)="guardar(inputTarea.value)">Crear tarea</button>
+
+
+<ul>
+  <li *ngFor="let t of tareas">{{t.titulo}}</li>
+</ul>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlAPI: 'https://localhost:3000/v1'
+  urlTareas: 'https://ejemplos-dc1c1.firebaseio.com/tareas-hacienda/angel'
 };
 
 /*

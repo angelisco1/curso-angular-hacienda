@@ -1,3 +1,14 @@
 <h2>Servicios</h2>
 <button (click)="mostrarError()">Mostrar error</button>
 <button (click)="mostrarWarning()">Mostrar warning</button>
+
+<button *ngIf="isLoggedIn; else loginBtn" (click)="logout()">Logout</button>
+
+<ng-template #loginBtn>
+  <button (click)="login()">Login</button>
+</ng-template>
+
+<hr>
+
+<app-cmp-a></app-cmp-a>
+<app-cmp-b></app-cmp-b>

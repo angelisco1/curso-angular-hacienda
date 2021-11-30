@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { CmpComponentesComponent } from './cmp-componentes/cmp-componentes.component';
@@ -16,6 +17,14 @@ import { ReactivoComponent } from './cmp04-formularios/reactivo/reactivo.compone
 import { NormalComponent } from './cmp04-formularios/normal/normal.component';
 import { ErroresFormComponent } from './cmp04-formularios/errores-form/errores-form.component';
 import { Cmp05ServiciosComponent } from './cmp05-servicios/cmp05-servicios.component';
+import { CmpAComponent } from './cmp05-servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './cmp05-servicios/cmp-b/cmp-b.component';
+import { Cmp06ComunicacionEntreComponentesComponent } from './cmp06-comunicacion-entre-componentes/cmp06-comunicacion-entre-componentes.component';
+import { CmpYComponent } from './cmp06-comunicacion-entre-componentes/cmp-y/cmp-y.component';
+import { CmpZComponent } from './cmp06-comunicacion-entre-componentes/cmp-z/cmp-z.component';
+import { Cmp07ObservablesComponent } from './cmp07-observables/cmp07-observables.component';
+import { FechaActualComponent } from './cmp07-observables/fecha-actual/fecha-actual.component';
+import { Cmp08HttpComponent } from './cmp08-http/cmp08-http.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +42,22 @@ import { Cmp05ServiciosComponent } from './cmp05-servicios/cmp05-servicios.compo
     ReactivoComponent,
     NormalComponent,
     ErroresFormComponent,
-    Cmp05ServiciosComponent
+    Cmp05ServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
+    Cmp06ComunicacionEntreComponentesComponent,
+    CmpYComponent,
+    CmpZComponent,
+    Cmp07ObservablesComponent,
+    FechaActualComponent,
+    Cmp08HttpComponent
   ],
   imports: [
     // Módulos
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

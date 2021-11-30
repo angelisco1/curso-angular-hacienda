@@ -1,0 +1,12 @@
+<h2>Comunicación entre componentes</h2>
+
+<app-cmp-y
+  [dMode]="darkMode"
+  (darkModeCambiado)="cambiarDarkMode($event)"
+></app-cmp-y>
+
+<app-cmp-z
+  [darkMode]="darkMode"
+></app-cmp-z>
+
+<!-- <input type="text" (change)="fn()"> -->

@@ -1,0 +1,6 @@
+<h3 [ngClass]="{darkMode: darkMode}">Cmp B</h3>
+
+<input type="text" (change)="guardar($event)">
+<ul>
+  <li *ngFor="let p of productos">{{p}}</li>
+</ul>

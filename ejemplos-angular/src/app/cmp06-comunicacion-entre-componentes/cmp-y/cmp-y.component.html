@@ -1,0 +1,6 @@
+<h3 [ngClass]="{darkMode: dMode}">Cmp Y</h3>
+
+<button *ngIf="dMode; else lightModeBtn" (click)="toggleDarkMode(false)">Dark Mode activado</button>
+<ng-template #lightModeBtn>
+  <button (click)="toggleDarkMode(true)">Light Mode activado</button>
+</ng-template>
