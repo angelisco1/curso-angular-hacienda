@@ -5,5 +5,9 @@
 
 
 <ul>
-  <li *ngFor="let t of tareas">{{t.titulo}}</li>
+  <li *ngFor="let t of tareas">
+    <span [ngClass]="{tachada: t.completada}">{{t.titulo}}</span>
+    <button (click)="completar(t)">Completar tarea</button>
+    <button (click)="eliminar(t.id)">Eliminar tarea</button>
+  </li>
 </ul>

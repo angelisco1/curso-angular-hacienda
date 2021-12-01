@@ -18,4 +18,8 @@ export class AuthService {
   isLoggedIn(): boolean {
     return localStorage.getItem('tokenAuth') !== null
   }
+
+  getToken(): string | null {
+    return localStorage.getItem('tokenAuth')
+  }
 }

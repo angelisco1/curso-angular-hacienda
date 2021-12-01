@@ -1,4 +1,12 @@
 <h1>Curso de Angular</h1>
+
+<button *ngIf="isLoggedIn; else loginBtn" (click)="logout()">Logout</button>
+
+<ng-template #loginBtn>
+  <button (click)="login()">Login</button>
+</ng-template>
+
+
 <!-- <app-cmp-componentes></app-cmp-componentes> -->
 <!-- <app-cmp01-data-binding></app-cmp01-data-binding> -->
 <!-- <app-cmp02-directivas></app-cmp02-directivas> -->
@@ -7,4 +15,5 @@
 <!-- <app-cmp05-servicios></app-cmp05-servicios> -->
 <!-- <app-cmp06-comunicacion-entre-componentes></app-cmp06-comunicacion-entre-componentes> -->
 <!-- <app-cmp07-observables></app-cmp07-observables> -->
-<app-cmp08-http></app-cmp08-http>
+<!-- <app-cmp08-http></app-cmp08-http> -->
+<app-cmp09-routing></app-cmp09-routing>

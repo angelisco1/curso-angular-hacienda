@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { CmpComponentesComponent } from './cmp-componentes/cmp-componentes.component';
@@ -25,6 +25,15 @@ import { CmpZComponent } from './cmp06-comunicacion-entre-componentes/cmp-z/cmp-
 import { Cmp07ObservablesComponent } from './cmp07-observables/cmp07-observables.component';
 import { FechaActualComponent } from './cmp07-observables/fecha-actual/fecha-actual.component';
 import { Cmp08HttpComponent } from './cmp08-http/cmp08-http.component';
+import { AuthInterceptor } from './cmp08-http/auth.interceptor';
+import { Cmp09RoutingComponent } from './cmp09-routing/cmp09-routing.component';
+import { UsuariosComponent } from './cmp09-routing/usuarios/usuarios.component';
+import { NuevoUsuarioComponent } from './cmp09-routing/nuevo-usuario/nuevo-usuario.component';
+import { RoutingModule } from './cmp09-routing/app.routes';
+import { HeaderComponent } from './cmp09-routing/header/header.component';
+import { DetalleUsuarioComponent } from './cmp09-routing/detalle-usuario/detalle-usuario.component';
+import { ErrorComponent } from './cmp09-routing/error/error.component';
+import { EditarUsuarioComponent } from './cmp09-routing/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -50,16 +59,26 @@ import { Cmp08HttpComponent } from './cmp08-http/cmp08-http.component';
     CmpZComponent,
     Cmp07ObservablesComponent,
     FechaActualComponent,
-    Cmp08HttpComponent
+    Cmp08HttpComponent,
+    Cmp09RoutingComponent,
+    UsuariosComponent,
+    NuevoUsuarioComponent,
+    HeaderComponent,
+    DetalleUsuarioComponent,
+    ErrorComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     // Módulos
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

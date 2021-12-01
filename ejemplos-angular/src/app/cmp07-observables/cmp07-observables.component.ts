@@ -40,6 +40,25 @@ export class Cmp07ObservablesComponent implements OnInit {
       }, 8000)
     })
 
+    // miObservable.subscribe((msg: string) => {
+    //   console.log(msg)
+    // })
+
+    miObservable.subscribe({
+      next: (msg: string) => { // .next
+        console.log(msg)
+      },
+      error: (err: string) => { // .error
+        console.log(err)
+        console.log('Oye, suscribete otra vez...')
+      },
+      complete: () => { // .complete
+        console.log('Ya has terminado el capitulo, te ponemos el siguiente...')
+      }
+    })
+
+    // 👇 ESTA DEPRECADO, MIRAR EL DE ARRIBA, AHORA SE LE PASA UN OBJETO
+    /*
     miObservable.subscribe(
       (msg: string) => { // .next
         console.log(msg)
@@ -52,6 +71,7 @@ export class Cmp07ObservablesComponent implements OnInit {
         console.log('Ya has terminado el capitulo, te ponemos el siguiente...')
       }
     )
+    */
   }
 
   observable2() {

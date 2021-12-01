@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable, map } from 'rxjs';
+import { threadId } from 'worker_threads';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,17 @@ export class TareasService {
           return arrTareas
         })
       )
+  }
 
+  completarTarea(id: string, completada: boolean): Observable<any> {
+    const cambios = {
+      completada
+    }
+    return this.http.patch(`${environment.urlTareas}/${id}.json`, cambios)
+  }
+
+  eliminarTarea(id: string): Observable<null> {
+    return this.http.delete<null>(`${environment.urlTareas}/${id}.json`)
   }
 
 }
