@@ -10,6 +10,12 @@
           "strict": true
         }
       },
+      "i18n": {
+        "locales": {
+          "es": "src/locales/messages.es.xlf",
+          "it": "src/locales/messages.it.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -27,11 +33,20 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/lara-light-indigo/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "localize": ["es"]
+            },
+            "it": {
+              "localize": ["it"]
+            },
             "production": {
               "budgets": [
                 {
@@ -67,6 +82,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "es": {
+              "browserTarget": "ejemplos-angular:build:es"
+            },
+            "it": {
+              "browserTarget": "ejemplos-angular:build:it"
+            },
             "production": {
               "browserTarget": "ejemplos-angular:build:production"
             },

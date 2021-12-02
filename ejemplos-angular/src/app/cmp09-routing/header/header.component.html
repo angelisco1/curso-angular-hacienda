@@ -3,6 +3,12 @@
     <a [routerLink]="['/']">Inicio</a>
     <br>
     <a [routerLink]="['/nuevo-usuario']">Nuevo usuario</a>
+    <br>
+    <a [routerLink]="['/']" [queryParams]="{limit: 4}">Inicio (limite de 4)</a>
+    <br>
+    <a [routerLink]="['/']" [queryParams]="{limit: 4, page: 2}">Inicio (limite de 4 y page de 2)</a>
+    <br>
+    <a [routerLink]="['/admin']">Panel de administración (funciona con el cmp11-lazy-loading.module)</a>
   </nav>
 </header>
 

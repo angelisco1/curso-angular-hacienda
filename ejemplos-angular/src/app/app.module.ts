@@ -34,6 +34,13 @@ import { HeaderComponent } from './cmp09-routing/header/header.component';
 import { DetalleUsuarioComponent } from './cmp09-routing/detalle-usuario/detalle-usuario.component';
 import { ErrorComponent } from './cmp09-routing/error/error.component';
 import { EditarUsuarioComponent } from './cmp09-routing/editar-usuario/editar-usuario.component';
+import { Cmp10ModulosModule } from './cmp10-modulos/cmp10-modulos.module';
+import { Cmp12InternacionalizacionComponent } from './cmp12-internacionalizacion/cmp12-internacionalizacion.component';
+import { Cmp13PrimengComponent } from './cmp13-primeng/cmp13-primeng.component';
+import { CardModule } from 'primeng/card'
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -66,7 +73,9 @@ import { EditarUsuarioComponent } from './cmp09-routing/editar-usuario/editar-us
     HeaderComponent,
     DetalleUsuarioComponent,
     ErrorComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    Cmp12InternacionalizacionComponent,
+    Cmp13PrimengComponent
   ],
   imports: [
     // Módulos
@@ -74,7 +83,12 @@ import { EditarUsuarioComponent } from './cmp09-routing/editar-usuario/editar-us
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    Cmp10ModulosModule,
+    CardModule,
+    ButtonModule,
+    DialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

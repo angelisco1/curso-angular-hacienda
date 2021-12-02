@@ -1,0 +1,12 @@
+<h2 i18n>Internationalization</h2>
+
+<ul>
+  <li *ngFor="let enlace of listaEnlaces">
+    <a href="/{{enlace.code}}/">{{enlace.label}}</a>
+  </li>
+</ul>
+
+<p i18n>Welcome</p>
+
+
+<p>{{18 | currency:'EUR'}}</p>

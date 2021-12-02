@@ -1,0 +1,17 @@
+<h2>Ejemplo con PrimeNG</h2>
+
+<p-card header="Angular 13" subheader="Novedades" [style]="{width: '360px'}" styleClass="p-card-shadow">
+  <ng-template pTemplate="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" alt="Logo de Angular" width="100">
+  </ng-template>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam omnis, nesciunt inventore temporibus esse deleniti hic illum praesentium porro placeat sunt possimus quos vel soluta veritatis asperiores numquam ea!</p>
+  <ng-template pTemplate="footer">
+    <a pButton href="https://angular.io/" target="_blank" icon="pi pi-info-circle" iconPos="right" label="+ Info" class="p-button-info" [style]="{textDecoration: 'none'}"></a>
+    <button pButton label="Prueba suerte" class="p-button-success" (click)="abreElModal()"></button>
+  </ng-template>
+</p-card>
+
+
+<p-dialog header="Felicidades, eres el ganador" [(visible)]="display">
+  Has ganado un coche, manda un SMS a .......... para recibirlo.
+</p-dialog>

@@ -16,6 +16,14 @@ export interface IUsuario extends IUsuarioBase {
   company?: any,
 }
 
+export interface IOptions {
+  _limit?: string | null,
+  _page?: string | null,
+  _offset?: string | null,
+  _sort?: string | null,
+  _order?: string | null
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,8 +32,18 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getUsuarios(): Observable<Array<IUsuarioBase>> {
-    return this.http.get<Array<IUsuario>>(this.url)
+  getUsuarios(opciones?: IOptions): Observable<Array<IUsuarioBase>> {
+    let url = this.url;
+    if (opciones) {
+      url += Object.entries(opciones).reduce((acc, item, pos) => {
+        if (pos !== 0) {
+          acc += '&'
+        }
+        return acc += item[0] + '=' + item[1]
+      }, '?')
+    }
+
+    return this.http.get<Array<IUsuario>>(url)
       .pipe(
         map(data => {
           return data.map(u => {
